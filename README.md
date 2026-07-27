@@ -9,7 +9,9 @@ It's not a CRM or a cold-email tool. It just handles the awkward part:
 figuring out who's worth talking to, and reaching out without it feeling
 like a pitch.
 
-**[Download for Windows](#)** · **[Download for Mac](#)**
+**[Download for Windows](https://github.com/Emeralds/try-discovery-harness/releases/download/v0.10.1/Discovery.Harness.Setup.0.10.1.exe)** ·
+**[Download for Mac (Apple Silicon)](https://github.com/Emeralds/try-discovery-harness/releases/download/v0.10.1/Discovery.Harness-0.10.1-arm64.dmg)** ·
+**[Intel Mac / all releases](https://github.com/Emeralds/try-discovery-harness/releases/tag/v0.10.1)**
 
 ## Requirements
 
