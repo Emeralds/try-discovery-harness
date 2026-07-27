@@ -1,12 +1,13 @@
 # Discovery Harness
 
 A local, BYOK desktop app for solo-founder customer discovery. Give it a
-startup thesis, and it finds real companies and real people who might feel
-the pain, explains *why* each one is relevant, and drafts short, honest
-outreach — nothing sends automatically, you approve everything.
+startup thesis and it finds companies and people who might feel the pain,
+explains *why* each one is relevant, and drafts short, honest outreach.
+Nothing sends automatically — you approve everything.
 
-It's not a CRM. It's not cold-email automation. It's the messy first mile
-of customer discovery, made a little less overwhelming.
+It's not a CRM or a cold-email tool. It just handles the awkward part:
+figuring out who's worth talking to, and reaching out without it feeling
+like a pitch.
 
 **[Download for Windows](#)** · **[Download for Mac](#)**
 
@@ -17,7 +18,7 @@ of customer discovery, made a little less overwhelming.
   or [Anthropic](https://console.anthropic.com/settings/keys)) — the app is
   local-first and bring-your-own-key: research and drafting calls go
   straight from your machine to your own provider account, never through a
-  server we run. You paste the key into Settings on first run; it's
+  server I run. You paste the key into Settings on first run; it's
   encrypted at rest.
 - Optional: [Claude Code](https://claude.com/claude-code) with the `gstack`
   skill and the [`discovery-harness-skill`](https://github.com/Emeralds/discovery-harness-skill)
@@ -65,14 +66,13 @@ code-signing budget yet. It's safe, just unfamiliar to your OS:
 ## FAQ
 
 **Why isn't this open source?**
-It's early and still finding its footing — keeping the source closed for
-now while it holds up to more than just the original use. May revisit
-later.
+It's early. I want to see how it holds up outside my own use before
+opening the source — might revisit that later.
 
 **Why do I need my own API key?**
 Local-first and BYOK means your research and drafting calls go straight
-from your machine to your own OpenAI/Anthropic account — there's no server
-in between reading your hypothesis, your prospects, or your drafts.
+from your machine to your own OpenAI/Anthropic account, so there's no
+server in between reading your hypothesis, prospects, or drafts.
 
 **Do I need Claude Code / gstack to use this?**
 No. It's richer with a discovery-handoff YAML import (see Requirements
