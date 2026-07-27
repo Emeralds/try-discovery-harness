@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discovery Harness — customer discovery for solo founders</title>
+<meta name="description" content="Discovery Harness turns a startup thesis into real companies, real people, and respectful outreach drafts — local-first, bring your own API key.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #18181b;
+    --muted-bg: #f4f4f5;
+    --muted-fg: #71717a;
+    --border: #e4e4e7;
+    --accent: #4f46e5;
+    --accent-fg: #ffffff;
+    --radius: 0.5rem;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, "Segoe UI", ui-sans-serif, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  header.site {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+  }
+  header.site .wrap {
+    max-width: 1040px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+  }
+  .logo span { color: var(--muted-fg); font-weight: 400; }
+  nav.site a {
+    color: var(--muted-fg);
+    text-decoration: none;
+    font-size: 13px;
+    margin-left: 20px;
+  }
+  nav.site a:hover { color: var(--fg); }
+
+  section.hero {
+    padding: 72px 0 56px;
+    text-align: center;
+  }
+  section.hero h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+  }
+  section.hero p.sub {
+    color: var(--muted-fg);
+    font-size: 17px;
+    max-width: 560px;
+    margin: 0 auto 32px;
+  }
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--border);
+  }
+  .btn.primary {
+    background: var(--accent);
+    color: var(--accent-fg);
+    border-color: var(--accent);
+  }
+  .btn.secondary {
+    background: var(--bg);
+    color: var(--fg);
+  }
+  .btn .meta {
+    font-weight: 400;
+    opacity: 0.8;
+    font-size: 12px;
+  }
+  .unsigned-note {
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--muted-fg);
+  }
+  .unsigned-note a { color: var(--accent); }
+
+  section {
+    padding: 48px 0;
+    border-top: 1px solid var(--border);
+  }
+  section h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+  section p.lede {
+    color: var(--muted-fg);
+    margin: 0 0 28px;
+    max-width: 560px;
+  }
+
+  .bottleneck-list {
+    display: grid;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .bottleneck-list li {
+    background: var(--muted-bg);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .steps {
+    display: grid;
+    gap: 20px;
+  }
+  .step {
+    display: flex;
+    gap: 16px;
+  }
+  .step .n {
+    flex: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--accent-fg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .step h3 {
+    margin: 2px 0 4px;
+    font-size: 15px;
+  }
+  .step p {
+    margin: 0;
+    color: var(--muted-fg);
+    font-size: 14px;
+  }
+
+  .screenshot {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--muted-bg);
+    aspect-ratio: 16 / 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted-fg);
+    font-size: 13px;
+    text-align: center;
+    padding: 24px;
+  }
+  .screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius);
+  }
+
+  .gstack-callout {
+    background: var(--muted-bg);
+    border-radius: var(--radius);
+    padding: 20px;
+    font-size: 14px;
+  }
+  .gstack-callout code {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: 13px;
+  }
+
+  details.faq {
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+  }
+  details.faq summary {
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  details.faq p {
+    color: var(--muted-fg);
+    margin: 10px 0 0;
+    font-size: 14px;
+  }
+  details.faq p code {
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    background: var(--muted-bg);
+    padding: 1px 5px;
+    border-radius: 4px;
+  }
+
+  footer.site {
+    border-top: 1px solid var(--border);
+    padding: 32px 0;
+    text-align: center;
+    color: var(--muted-fg);
+    font-size: 13px;
+  }
+  footer.site a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 640px) {
+    section.hero h1 { font-size: 26px; }
+    .cta-row { flex-direction: column; align-items: stretch; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="logo">Discovery <span>/</span> Harness</div>
+    <nav class="site">
+      <a href="#how-it-works">How it works</a>
+      <a href="#download">Download</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Turn a startup thesis into real companies, real people, and respectful outreach — without running a lead-gen campaign.</h1>
+    <p class="sub">
+      Discovery Harness is a local, BYOK desktop app for solo founders doing
+      customer discovery. It's not a CRM. It's not cold-email automation.
+      It's the messy first mile of talking to real people, made a little
+      less overwhelming.
+    </p>
+    <div class="cta-row" id="download">
+      <a class="btn primary" href="#" data-download="windows">
+        Download for Windows <span class="meta">.exe</span>
+      </a>
+      <a class="btn secondary" href="#" data-download="mac">
+        Download for Mac <span class="meta">.dmg, Apple Silicon + Intel</span>
+      </a>
+    </div>
+    <p class="unsigned-note">
+      Both builds are unsigned (solo project, no signing budget yet) —
+      see the <a href="#faq">FAQ</a> below for the exact steps to open them safely.
+    </p>
+  </div>
+</section>
+
+<section id="who-its-for">
+  <div class="wrap">
+    <h2>Built for gstack users — works for everyone else too</h2>
+    <p class="lede">
+      If you're already running Claude Code's <code>/gstack</code> skill,
+      this is the last step of the chain you're already using.
+    </p>
+    <div class="gstack-callout">
+      Run <code>/office-hours</code> on a raw idea, then
+      <code>/discovery-handoff</code> to produce a structured targeting
+      YAML. Import that YAML into Discovery Harness and every field —
+      reachable proxy, observable signals, trigger events — is prefilled.
+      Get the skill: <a href="https://github.com/Emeralds/discovery-harness-skill" style="color:var(--accent)">discovery-harness-skill</a>.
+      <br><br>
+      Don't have gstack? Fill in a product hypothesis by hand instead —
+      name, thesis, target customer, problem. The app works fully either
+      way; gstack just gives the research prompts richer signal to work
+      against.
+    </div>
+  </div>
+</section>
+
+<section id="problem">
+  <div class="wrap">
+    <h2>The bottleneck usually isn't building</h2>
+    <p class="lede">It's everything between an idea and a real conversation:</p>
+    <ul class="bottleneck-list">
+      <li>Choosing the right customer segment to investigate</li>
+      <li>Finding relevant people to actually talk to</li>
+      <li>Feeling confident outreach is thoughtful, not annoying</li>
+      <li>Turning vague curiosity into specific discovery questions</li>
+      <li>Keeping a lightweight pipeline of conversations moving</li>
+      <li>Capturing what you learn and updating the thesis from it</li>
+    </ul>
+  </div>
+</section>
+
+<section id="how-it-works">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <div>
+          <h3>Start with a thesis</h3>
+          <p>Import a discovery-handoff YAML, or type in a hypothesis by hand — who has the pain, why now, what you need to learn.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div>
+          <h3>Find companies and people</h3>
+          <p>Research finds real companies and real people who might feel the pain — always with a stated "why this person?" If it can't explain the reason, it won't suggest reaching out.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div>
+          <h3>Draft outreach, you approve it</h3>
+          <p>Short, honest outreach drafts grounded only in real evidence — nothing sends automatically. Daily send cap, human approval required, always.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <div>
+          <h3>Track replies, log what you learn</h3>
+          <p>Follow-up nudges surface on their own; passing on someone asks why, so patterns in what doesn't fit become visible over time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="screenshot">
+  <div class="wrap">
+    <h2>See it in action</h2>
+    <p class="lede">Screenshot pending — swap this block for a real capture before publishing.</p>
+    <div class="screenshot">
+      <!-- Replace with <img src="assets/screenshot-prospects.png" alt="…"> once captured. -->
+      Screenshot: prospect table with live research status
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>FAQ</h2>
+
+    <details class="faq">
+      <summary>Why isn't this open source?</summary>
+      <p>It's early and still finding its footing — keeping the source
+      closed for now while it holds up to more than just my own use.
+      Happy to revisit this later.</p>
+    </details>
+
+    <details class="faq">
+      <summary>Why is the installer unsigned?</summary>
+      <p>Solo project, no code-signing budget yet. It's safe, just
+      unfamiliar:</p>
+      <p><strong>Windows:</strong> SmartScreen will say "Windows protected
+      your PC" → click <code>More info</code> → <code>Run anyway</code>.</p>
+      <p><strong>Mac:</strong> Gatekeeper blocks the first launch →
+      right-click (or Control-click) the app → <code>Open</code> → confirm
+      <code>Open</code> in the dialog. Opens normally after that.</p>
+    </details>
+
+    <details class="faq">
+      <summary>Why do I need my own OpenAI/Anthropic API key?</summary>
+      <p>Discovery Harness is local-first and BYOK (bring your own key) —
+      research and drafting calls go straight from your machine to your own
+      OpenAI/Anthropic account. There's no server in between reading your
+      hypothesis, your prospects, or your drafts.</p>
+    </details>
+
+    <details class="faq">
+      <summary>Do I need Claude Code / gstack to use this?</summary>
+      <p>No. It's richer with a discovery-handoff YAML import, but every
+      field works filled in by hand too.</p>
+    </details>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    Discovery Harness — a personal customer-discovery tool, not a CRM.
+    <br>
+    Feedback or bugs: <a href="#">open an issue</a> ·
+    <a href="https://github.com/Emeralds/discovery-harness-skill">discovery-harness-skill</a>
+  </div>
+</footer>
+
+</body>
+</html>
