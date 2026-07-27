@@ -58,6 +58,15 @@
     padding: 72px 0 56px;
     text-align: center;
   }
+  p.kicker {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 0 12px;
+  }
+  p.kicker code {
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  }
   section.hero h1 {
     font-size: 32px;
     font-weight: 700;
@@ -188,21 +197,6 @@
     border-radius: var(--radius);
   }
 
-  .gstack-callout {
-    background: var(--muted-bg);
-    border-radius: var(--radius);
-    padding: 20px;
-    font-size: 14px;
-  }
-  .gstack-callout code {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 1px 6px;
-    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
-    font-size: 13px;
-  }
-
   details.faq {
     border-bottom: 1px solid var(--border);
     padding: 14px 0;
@@ -254,11 +248,14 @@
 
 <section class="hero">
   <div class="wrap">
-    <h1>Find the people worth talking to about your startup idea, and reach out without it feeling like a pitch.</h1>
+    <p class="kicker">For founders stuck after <code>/office-hours</code></p>
+    <h1>The thesis is sharp. Now go find out if it's true.</h1>
     <p class="sub">
-      Discovery Harness is a local, BYOK desktop app for solo founders doing
-      customer discovery. Not a CRM, not a cold-email tool — just help with
-      the awkward part: figuring out who to talk to and how to ask.
+      Validating it means talking to real people, and that's usually where
+      it stalls: who do you reach out to, and how, without sounding like a
+      pitch? Discovery Harness is a local, BYOK desktop app that picks up
+      right there — import your discovery-handoff YAML and get a list of
+      real people, each with a reason why, and a draft ready to send.
     </p>
     <div class="cta-row" id="download">
       <a class="btn primary" href="https://github.com/Emeralds/try-discovery-harness/releases/download/v0.10.1/Discovery.Harness.Setup.0.10.1.exe">
@@ -277,38 +274,15 @@
   </div>
 </section>
 
-<section id="who-its-for">
-  <div class="wrap">
-    <h2>Made for gstack users, but not only for them</h2>
-    <p class="lede">
-      If you already use Claude Code's <code>/gstack</code> skill, this is
-      the last step in that chain.
-    </p>
-    <div class="gstack-callout">
-      Run <code>/office-hours</code> on a raw idea, then
-      <code>/discovery-handoff</code> to turn it into a structured targeting
-      YAML. Import that here and every field (reachable proxy, observable
-      signals, trigger events) gets prefilled. Grab the skill:
-      <a href="https://github.com/Emeralds/discovery-harness-skill" style="color:var(--accent)">discovery-harness-skill</a>.
-      <br><br>
-      No gstack? Type in a product hypothesis by hand: name, thesis, target
-      customer, problem. The app works the same either way — gstack just
-      gives the research prompts more to work with.
-    </div>
-  </div>
-</section>
-
 <section id="problem">
   <div class="wrap">
-    <h2>Building was never the hard part</h2>
-    <p class="lede">The hard part is everything before the first real conversation:</p>
+    <h2>Office hours gets you the thesis. It doesn't get you the conversation.</h2>
+    <p class="lede">That gap is where validation usually dies. Go do this instead:</p>
     <ul class="bottleneck-list">
-      <li>Choosing the right customer segment to investigate</li>
-      <li>Finding relevant people to actually talk to</li>
-      <li>Feeling confident outreach is thoughtful, not annoying</li>
-      <li>Turning vague curiosity into specific discovery questions</li>
-      <li>Keeping a lightweight pipeline of conversations moving</li>
-      <li>Capturing what you learn and updating the thesis from it</li>
+      <li>Turn "mid-market ecommerce ops leaders" into 5 real names, not a persona</li>
+      <li>Know specifically why each one is worth a message before you send it</li>
+      <li>Send outreach today that doesn't read like a template</li>
+      <li>Log the call and find out if the thesis actually holds up</li>
     </ul>
   </div>
 </section>
@@ -320,29 +294,29 @@
       <div class="step">
         <div class="n">1</div>
         <div>
-          <h3>Start with a thesis</h3>
-          <p>Import a discovery-handoff YAML, or type in a hypothesis by hand — who has the pain, why now, what you need to learn.</p>
+          <h3>Import your handoff YAML</h3>
+          <p>Ran <code>/office-hours</code> then <code>/discovery-handoff</code>? Import the YAML and every field — reachable proxy, observable signals, trigger events — prefills. No gstack? Type the hypothesis in by hand; it works the same either way. Get the skill: <a href="https://github.com/Emeralds/discovery-harness-skill" style="color:var(--accent)">discovery-harness-skill</a>.</p>
         </div>
       </div>
       <div class="step">
         <div class="n">2</div>
         <div>
-          <h3>Find companies and people</h3>
-          <p>Research finds companies and people who might actually feel the pain, always with a stated reason why. If it can't explain that reason, it won't suggest reaching out.</p>
+          <h3>Get real people, with the reason why</h3>
+          <p>Research finds companies and people who might actually feel the pain. If it can't state a specific reason why one is worth contacting, it won't suggest reaching out.</p>
         </div>
       </div>
       <div class="step">
         <div class="n">3</div>
         <div>
-          <h3>Draft outreach, you approve it</h3>
-          <p>Drafts are short and honest, grounded only in real evidence. Nothing sends automatically — there's a daily cap, and you approve every message first.</p>
+          <h3>Send outreach you'd actually send</h3>
+          <p>Drafts are short and honest, grounded only in real evidence. Nothing goes out automatically — there's a daily cap, and you approve every message first.</p>
         </div>
       </div>
       <div class="step">
         <div class="n">4</div>
         <div>
-          <h3>Track replies, log what you learn</h3>
-          <p>Follow-up nudges surface on their own; passing on someone asks why, so patterns in what doesn't fit become visible over time.</p>
+          <h3>Log the call, update the thesis</h3>
+          <p>Follow-up nudges surface on their own. Passing on someone asks why, so you can see whether the thesis is holding up or needs to change.</p>
         </div>
       </div>
     </div>

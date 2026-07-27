@@ -1,13 +1,13 @@
 # Discovery Harness
 
-A local, BYOK desktop app for solo-founder customer discovery. Give it a
-startup thesis and it finds companies and people who might feel the pain,
-explains *why* each one is relevant, and drafts short, honest outreach.
-Nothing sends automatically — you approve everything.
+For founders stuck after `/office-hours`: the thesis is sharp, but
+validating it means talking to real people, and that's usually where it
+stalls.
 
-It's not a CRM or a cold-email tool. It just handles the awkward part:
-figuring out who's worth talking to, and reaching out without it feeling
-like a pitch.
+Import your discovery-handoff YAML (or type a hypothesis in by hand) and
+Discovery Harness finds real people who might feel the pain, states
+specifically why each one is worth contacting, and drafts outreach that's
+ready to send. Nothing goes out automatically — you approve everything.
 
 **[Download for Windows](https://github.com/Emeralds/try-discovery-harness/releases/download/v0.10.1/Discovery.Harness.Setup.0.10.1.exe)** ·
 **[Download for Mac (Apple Silicon)](https://github.com/Emeralds/try-discovery-harness/releases/download/v0.10.1/Discovery.Harness-0.10.1-arm64.dmg)** ·
