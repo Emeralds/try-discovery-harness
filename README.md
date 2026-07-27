@@ -3,7 +3,7 @@
 A local, BYOK desktop app for solo-founder customer discovery. Give it a
 startup thesis and it finds companies and people who might feel the pain,
 explains *why* each one is relevant, and drafts short, honest outreach.
-Nothing sends automatically — you approve everything.
+Nothing sends automatically - you approve everything.
 
 It's not a CRM or a cold-email tool. It just handles the awkward part:
 figuring out who's worth talking to, and reaching out without it feeling
@@ -17,7 +17,7 @@ like a pitch.
 
 - **Windows 10/11** or **macOS 12+** (Apple Silicon or Intel).
 - Your own **OpenAI** or **Anthropic API key** ([get one from OpenAI](https://platform.openai.com/api-keys)
-  or [Anthropic](https://console.anthropic.com/settings/keys)) — the app is
+  or [Anthropic](https://console.anthropic.com/settings/keys)) - the app is
   local-first and bring-your-own-key: research and drafting calls go
   straight from your machine to your own provider account, never through a
   server I run. You paste the key into Settings on first run; it's
@@ -25,12 +25,12 @@ like a pitch.
 - Optional: [Claude Code](https://claude.com/claude-code) with the `gstack`
   skill and the [`discovery-harness-skill`](https://github.com/Emeralds/discovery-harness-skill)
   (`discovery-handoff`) skill, if you want to import a structured targeting
-  YAML instead of typing a hypothesis in by hand. Not required — every
+  YAML instead of typing a hypothesis in by hand. Not required - every
   field works either way.
 
 ## Install
 
-Both builds are **unsigned** — this is a solo project without a
+Both builds are **unsigned** - this is a solo project without a
 code-signing budget yet. It's safe, just unfamiliar to your OS:
 
 ### Windows
@@ -52,24 +52,24 @@ code-signing budget yet. It's safe, just unfamiliar to your OS:
 ## First run
 
 1. Open the app. A **Getting Started** guide walks you through the basics
-   the first time — reopen it anytime from the header.
+   the first time - reopen it anytime from the header.
 2. Click the **Settings** icon and paste in your OpenAI and/or Anthropic
    API key, then pick which provider/model handles **research** (web
    search) vs. **drafting** (chat).
-3. Add your first product hypothesis — either **Import from
+3. Add your first product hypothesis - either **Import from
    discovery-handoff** (if you have a YAML from the gstack skill) or fill
    in the form by hand: name, one-sentence thesis, target customer,
    problem hypothesis, and what you most need to learn.
 4. From there: find companies or prospects, review why each one is
    relevant, generate an outreach draft, and approve it before it's ever
-   marked sent. A daily send cap and human approval are hard-coded —
+   marked sent. A daily send cap and human approval are hard-coded -
    nothing sends on its own.
 
 ## FAQ
 
 **Why isn't this open source?**
 It's early. I want to see how it holds up outside my own use before
-opening the source — might revisit that later.
+opening the source - might revisit that later.
 
 **Why do I need my own API key?**
 Local-first and BYOK means your research and drafting calls go straight
